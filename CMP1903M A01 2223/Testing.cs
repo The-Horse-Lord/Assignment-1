@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,30 +12,27 @@ namespace CMP1903M_A01_2223
         {
             Pack test_pack = new Pack();
         }
-        public static void TestingShuffle(int shuffle_type)
+        public static Pack TestingShuffle(int shuffle_type)//method to show different types of shuffle
         {
             Pack test_pack = new Pack();
-            Pack.shuffleCardPack(shuffle_type, test_pack);
+            Pack.shuffleCardPack(shuffle_type,test_pack);
             test_pack.ShowPack();
             Console.WriteLine("\n\n");
+            return test_pack;
         }
 
-        public static void TestingDeal(int deal)
+        public static void TestingDeal(int deal, Pack pack)//method to deal one or multiple cards
         {
-            Pack test_pack = new Pack(); 
-            Pack.shuffleCardPack(1,test_pack);
             if (deal == 1) { 
-                Card dealer = Pack.deal(test_pack);
+                Card dealer = Pack.deal(pack);
                 Console.WriteLine(dealer.Name);
                 Console.WriteLine("\n\n");
             }
             else if (deal > 1)
             {
-                List<Card> dealer2 = Pack.dealCard(deal, test_pack);
-                foreach (Card card in dealer2) Console.WriteLine(card.Name);
+                List<Card> dealer2 = Pack.dealCard(deal,pack);
+                foreach (Card card in dealer2) Console.WriteLine("\n"+card.Name);
             }
-            else throw new ArgumentException(deal.ToString());
             }
         }
     }
-
