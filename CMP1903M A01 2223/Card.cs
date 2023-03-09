@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +22,13 @@ namespace CMP1903M_A01_2223
                 return Value + " " + Suit;
             }
         }
+        //there is four suit from 1 to 4
         public void SetSuit(int _suit)
         {
             if (_suit < 1 || _suit > 4) throw new ArgumentException();
             else Suit= _suit;
         }
+        //the value of the card is from 1 to 13
         public void SetValue(int _value)
         {
             if (_value < 1 || _value > 13) throw new ArgumentException();
